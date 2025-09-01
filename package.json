@@ -1,31 +1,11 @@
 {
-  "name": "create-project",
+  "name": "mcp-catfact-demo",
   "version": "1.0.0",
-  "description": "A CLI to bootstrap my new projects",
-  "main": "src/index.js",
-  "bin": {
-    "@your_npm_username/create-project": "bin/create-project",
-    "create-project": "bin/create-project.js"
-  },
+  "description": "Minimal MCP server wrapping catfact.ninja with demo notebook.",
   "type": "module",
-  "publishConfig": {
-    "access": "public"
-  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"No tests specified\"",
+    "mcp-server": "node src/mcpServer.js"
   },
-  "keywords": [
-    "cli",
-    "create-project"
-  ],
-  "author": "llad",
-  "license": "MIT",
-  "dependencies": {
-    "chalk": "^5.2.0",
-    "esm": "^3.2.25",
-    "execa": "^6.1.0",
-    "listr": "^0.14.3",
-    "ncp": "^2.0.0",
-    "pkg-install": "^1.0.0"
-  }
+  "license": "MIT"
 }
