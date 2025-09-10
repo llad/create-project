@@ -1,5 +1,7 @@
 import http from 'http';
 
+const API_KEY = process.env.MCP_API_KEY;
+
 const resources = {
   cat_fact: {
     name: 'Random Cat Fact',
@@ -9,6 +11,12 @@ const resources = {
 };
 
 const server = http.createServer(async (req, res) => {
+  if (req.headers['x-api-key'] !== API_KEY) {
+    res.writeHead(401, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ error: 'Unauthorized' }));
+    return;
+  }
+
   if (req.method !== 'POST') {
     res.writeHead(405);
     res.end();
